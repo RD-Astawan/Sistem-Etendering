@@ -59,6 +59,11 @@ $route['kon_page/(:any)'] = 'KonsumenMainPage/$1';
 $route['kon_page/(:any)/(:any)']    = 'KonsumenMainPage/$1/$2';
 $route['kon_page/(:any)/(:any)/(:any)']    = 'KonsumenMainPage/$1/$2/$3';
 
+$route['pro_page'] = 'ProdusenMainPage';
+$route['pro_page/(:any)'] = 'ProdusenMainPage/$1';
+$route['pro_page/(:any)/(:any)']    = 'ProdusenMainPage/$1/$2';
+$route['pro_page/(:any)/(:any)/(:any)']    = 'ProdusenMainPage/$1/$2/$3';
+
 $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

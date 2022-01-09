@@ -275,7 +275,7 @@
                         $('#loginForm')[0].reset();
                         setTimeout(function(){
                           if(response.produsen){
-                            window.location = "<?= base_url('Produsen/index') ?>";
+                            window.location = "<?= base_url('ProdusenMainPage/index') ?>";
                           }
                           else if(response.konsumen){
                             window.location = "<?= base_url('KonsumenMainPage/index') ?>";

@@ -24,6 +24,13 @@
 			'tittle'	=> ''
 		];
 
+		public $parseData_pro = [
+			'navbar_pro' => 'Produsen/inc/v_navbar_isi',
+			'sidebar_pro' => 'Produsen/inc/v_sidebar_isi',
+			'content_pro' => '',
+			'tittle'	=> ''
+		];
+
 		public function message($title = NULL, $text = NULL, $type = NULL){
 			return $this->session->set_flashdata([
 				'title' => $title,

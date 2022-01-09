@@ -22,9 +22,8 @@ class Produsen extends CI_Controller{
         $tender['tender'][$i]->tanggal_tutup = date('d F Y', strtotime($tender['tender'][$i]->tanggal_tutup));
         $tender['tender'][$i]->deadline = date('d F Y', strtotime($tender['tender'][$i]->deadline));
       }
-      $this->load->view('Produsen/inc/v_navbar');
-      $this->load->view('Produsen/inc/v_sidebar');
-      $this->load->view('Produsen/v_view_beranda', $tender);
+      
+      $this->load->view('Produsen/ProdusenMainView', $tender);
       
   }
 
@@ -57,7 +56,6 @@ class Produsen extends CI_Controller{
     $this->load->view('Produsen/v_edit_lamaran',$data);
   }
 
-  
 
   function lamar_tender(){
     $data = $this->M_produsen->lamar_tender();

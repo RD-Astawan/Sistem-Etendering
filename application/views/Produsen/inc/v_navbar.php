@@ -1,130 +1,174 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>E - Tendering</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="all,follow">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="<?= base_url('assets/Produsen/vendor/bootstrap/css/bootstrap.min.css') ?>">
-    <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="<?= base_url('assets/Produsen/vendor/font-awesome/css/font-awesome.min.css') ?>">
-    <!-- Google fonts - Roboto-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
-    <!-- Bootstrap Select-->
-    <link rel="stylesheet" href="<?= base_url('assets/Produsen/vendor/bootstrap-select/css/bootstrap-select.min.css') ?>">
-    <!-- owl carousel-->
-    <link rel="stylesheet" href="<?= base_url('assets/Produsen/vendor/owl.carousel/assets/owl.carousel.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/Produsen/vendor/owl.carousel/assets/owl.theme.default.css') ?>">
-    <!-- theme stylesheet-->
-    <link rel="stylesheet" href="<?= base_url('assets/Produsen/css/style.default.css') ?>" id="theme-stylesheet">
-    <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="<?= base_url('assets/Produsen/css/custom.css') ?>">
-    <link href="<?= base_url('assets/Toastr/build/toastr.min.css') ?>" rel="stylesheet">
-    <!-- Favicon and apple touch icons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png">
-    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-        <style type="text/css">
-    .image-preview{
-            width: 250px;
-            min-height: 235px;
-            border: 2px solid #dddddd;
-            margin-top: 54px;
+<html lang="en">
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #cccccc;
-        }
-        .image-preview_image{
-            display: none;
-            width: 100%;
-        }
+<head>
+  <meta charset="utf-8">
+  <title>SoftLand Bootstrap Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
 
-        .post_image-preview{
-            width: 295px;
-            min-height: 200px;
-            border: 2px solid #dddddd;
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #cccccc;
-        }
-        .post_image-preview_image{
-            display: none;
-            width: 100%;
-        }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700|Roboto:300,400,700&display=swap"
+    rel="stylesheet">
+  <!-- Bootstrap CSS File -->
+  <link href="<?= base_url('assets/Konsumen/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="<?= base_url('assets/Konsumen/vendor/icofont/icofont.min.css') ?>" rel="stylesheet">
+  <link href="<?= base_url('assets/Konsumen/vendor/line-awesome/css/line-awesome.min.css') ?>" rel="stylesheet">
+  <link href="<?= base_url('assets/Konsumen/vendor/aos/aos.css') ?>" rel="stylesheet">
+  <link href="<?= base_url('assets/Konsumen/vendor/owlcarousel/assets/owl.carousel.min.css') ?>" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="<?= base_url('assets/Konsumen/css/style.css') ?>" rel="stylesheet">
+  <link href="<?= base_url('assets/Konsumen/css/magnum_custom.css') ?>" rel="stylesheet">
+
+  <link href="<?= base_url('assets/Konsumen/datatable/DataTables/css/dataTables.bootstrap4.min.css') ?>" rel="stylesheet">
+  <link href="<?= base_url('assets/Konsumen/datatable/datatables.css') ?>" rel="stylesheet">
+  <link href="<?= base_url('assets/Toastr/build/toastr.min.css') ?>" rel="stylesheet">
+
+<link href="<?= base_url('assets/Star_Rating/bootstrap/css/glyphicons.css') ?>" rel="stylesheet">
+  <link href="<?= base_url('assets/Star_Rating/bootstrap-star-rating/css/star-rating.min.css') ?>" rel="stylesheet">
+        <script type="text/javascript" src="<?= base_url('assets/Star_Rating/js/jquery-3.3.1.js') ?>"></script>
+     <script type="text/javascript" src="<?= base_url('assets/Star_Rating/bootstrap-star-rating/js/star-rating.min.js') ?>"></script>
+
+
+
+
+  <!-- =======================================================
+    Template Name: SoftLand
+    Template URL: https://bootstrapmade.com/softland-bootstrap-app-landing-page-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com/
+  ======================================================= -->
+  <style type="text/css">
+    .loader_bg{
+      position: fixed;
+      z-index: 999999;
+      background-color: #fff;
+      width: 100%;
+      height: 100%;
+      opacity: 90%;
+    }
+    .loader{
+      border: 0 solid transparent;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: calc(50vh - 75px);
+      left: calc(50vw - 75px);
+    }
+    .loader:before, .loader:after{
+      content: '';
+      border: 1em solid #ff5733;
+      border-radius: 50%;
+      width: inherit;
+      height: inherit;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: loader 2s linear infinite;
+      opacity: 0;
+    }
+    .loader:before{
+      animation-delay: .5s;
+    }
+    @keyframes loader{
+      0%{
+        transform: scale(0);
+        opacity: 0;
+      }
+      50%{
+        opacity: 1;
+      }
+      100%{
+        transform: scale(1);
+        opacity: 0;
+      }
+    }
+
+
+
+    .menu ul{
+      list-style: none;
+      margin: 0;
+      margin-left: -35px;
+    }
+    .menu ul li{
+      padding: 15px;
+      position: relative;
+      width: 260px;
+      background-color: #34495e;
+      border-top: 1px solid #bdc3c7;
+      border-right: 5px solid #f1c40f;
+    }
+    .menu ul li a{
+      color: #fff;
+      text-decoration: none;
+    }
+    .menu ul li:hover{
+      background-color: #2ecc71;
+    }
+    .icon{
+      margin-right: 10px;
+    }
+    
   </style>
-  </head>
-  <body>
-    <div id="all">
-      <!-- Top bar-->
-      <div class="top-bar">
-        <div class="container">
-          <div class="row d-flex align-items-center">
-            <div class="col-md-6 d-md-block d-none">
-              <p>Contact us on tenderkerajinan@gmail.com.</p>
-            </div>
-            <div class="col-md-6">
-              <div class="d-flex justify-content-md-end justify-content-between">
-                <ul class="list-inline contact-info d-block d-md-none">
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
-                </ul>
-                <ul class="social-custom list-inline">
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
+</head>
+
+<body>
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icofont-close js-menu-toggle"></span>
         </div>
       </div>
-      <!-- Top bar end-->
-     
-      <!-- Navbar Start-->
-      <header class="nav-holder make-sticky">
-        <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
-          <div class="container"><a href="index.html" class="navbar-brand home"><img src="<?= base_url('assets/Gambar/logo/logo.png') ?>" alt="Universal logo" class="d-none d-md-inline-block"><img src="<?= base_url('assets/Produsen/img/logo-small.png') ?>" alt="Universal logo" class="d-inline-block d-md-none"><span class="sr-only">Universal - go to homepage</span></a>
-            <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
-            <div id="navigation" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item"><a href="javascript: void(0)">Home </a></li>
-               
-                <!-- ========== FULL WIDTH MEGAMENU END ==================-->
-                <!-- ========== Contact dropdown ==================-->
-                <li class="nav-item"><a href="javascript: void(0)">Contact </a>
-                </li>
-                <!-- ========== Contact dropdown end ==================-->
-              </ul>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar js-sticky-header site-navbar-target" role="banner" style="background: rgb(59, 70, 74) none repeat scroll 0% 0%;">
+      <div class="bg-user-panel-header">
+                <img src="<?php echo base_url('assets/Konsumen/img/hero-bg.jpg') ?>" alt="User Image" />
             </div>
-            <div id="search" class="collapse clearfix">
-              <form role="search" class="navbar-form">
-                <div class="input-group">
-                  <input type="text" placeholder="Search" class="form-control"><span class="input-group-btn">
-                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button></span>
-                </div>
-              </form>
-            </div>
+
+      <div class="container">
+        <div class="row align-items-center">
+
+          <div class="col-6 col-lg-2">
+            <h1 class="mb-0 site-logo"><a href="index.html" class="mb-0"><center>E-Tendering Kerajinan</center></a></h1>
           </div>
+
+          <div class="col-12 col-md-10 d-none d-lg-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+             <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li class="active"><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="<?php echo base_url('KonsumenMainPage/list_tenderx')  ?>" class="nav-link">Tender</a></li>
+                <li><a href="<?php echo base_url('KonsumenMainPage/profile') ?>" class="nav-link">Profile</a></li>
+                <li><a href="<?php echo base_url('KonsumenMainPage/logout')  ?>" class="nav-link">Logout</a></li>
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="col-6 d-inline-block d-lg-none ml-md-0 py-3" style="position: relative; top: 3px;">
+
+            <a href="#" class="burger site-menu-toggle js-menu-toggle" data-toggle="collapse"
+              data-target="#main-navbar">
+              <span></span>
+            </a>
+          </div>
+
         </div>
-      </header>
-      <!-- Navbar End-->
-      
+      </div>
+
+    </header>

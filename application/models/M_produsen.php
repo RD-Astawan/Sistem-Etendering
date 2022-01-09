@@ -46,7 +46,7 @@ class M_produsen extends CI_Model{
 
   function list_lamaran($username_produsen){
     $hasil = $this->db->query("SELECT * FROM tb_lamaran INNER JOIN tb_tender ON tb_lamaran.id_tender = tb_tender.id_tender WHERE tb_lamaran.username_produsen='$username_produsen'");
-    return $hasil->result();
+    return $hasil;
   }
 
   function edit_lamaran($id_lamaran){
@@ -153,5 +153,22 @@ class M_produsen extends CI_Model{
     return $insert;
     return $delete;
 
+}
+
+function jum_lamaran($username_produsen){
+  $hasil = $this->db->query("SELECT * FROM tb_lamaran WHERE username_produsen = '$username_produsen'");
+  return $hasil;
+}
+function jum_tender_dikerjakan($id_produsen){
+  $hasil = $this->db->query("SELECT * FROM tb_pengerjaan_tender WHERE id_produsen = '$id_produsen'");
+  return $hasil;
+}
+function jum_tender_selesai($id_produsen){
+  $hasil = $this->db->query("SELECT * FROM tb_produsen WHERE id_produsen = '$id_produsen'");
+  return $hasil->row();
+}
+function data_tender($username_konsumen){
+  $hasil = $this->db->query("SELECT * FROM tb_tender INNER JOIN tb_status_tender ON tb_tender.id_status_tender = tb_status_tender.id_status_tender WHERE tb_tender.username_konsumen = '$username_konsumen'");
+  return $hasil->result();
 }
 }
