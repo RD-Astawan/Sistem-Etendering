@@ -22,6 +22,7 @@ class M_produsen extends CI_Model{
       'tawaran_harga' => $this->input->post('tawaran_harga'),
       'id_status_lamaran' => 3
     );
+
     $nama_file = time().$_FILES['rab']['name'];
     $nama_file = str_replace(' ','_',$nama_file);
     $config['upload_path'] = './assets/file/rab/';

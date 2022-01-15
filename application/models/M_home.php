@@ -33,7 +33,7 @@ class M_home extends CI_Model{
 		return $hsl;
 	}
 	public function get_top_lamaran(){
-		$query = $this->db->query("SELECT T.tittle, T.tanggal_tutup, L.id_tender, COUNT(L.id_tender) as hasil FROM tb_lamaran as L INNER JOIN tb_tender as T ON L.id_tender=T.id_tender GROUP BY T.id_tender ASC LIMIT 3");
+		$query = $this->db->query("SELECT T.tittle, T.tanggal_tutup, L.id_tender, COUNT(L.id_tender) as hasil FROM tb_lamaran as L INNER JOIN tb_tender as T ON L.id_tender=T.id_tender GROUP BY T.id_tender LIMIT 3");
 
 		 if($query->num_rows() > 0){
             foreach($query->result() as $data){
