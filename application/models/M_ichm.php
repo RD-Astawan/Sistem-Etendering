@@ -125,7 +125,8 @@ class M_ichm extends CI_Model
         // }
 
         
-        $scores = $this->ichm->getIchm($hasil_slope_one, $content_item, 0);
+        [$scores, $pearsonSim] = $this->ichm->getIchm($hasil_slope_one, $content_item, 0);
+        print_r($pearsonSim);
         for($i = 0; $i < sizeof($produsens); $i++) {
             $produsens[$i]->score = $scores[$i];
         } 

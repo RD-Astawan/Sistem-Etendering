@@ -234,7 +234,7 @@ class Ichm
         $lc = $this->linearCombination($pearsonSim, $adjustSim);
         $coldStart = $this->weightedAverageDeviation($rating, $lc, $indexUser);
 
-        return $coldStart;
+        return [$coldStart, $pearsonSim];
     }
 
 }
