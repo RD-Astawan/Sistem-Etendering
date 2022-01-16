@@ -6,10 +6,10 @@ class KonsumenMainPage extends MY_controller{
   public function __construct()
   {
     parent::__construct();
-    $this->load->model('M_Admin','m_admin');
-    $this->load->model('M_Konsumen','m_konsumen');
+    $this->load->model('M_admin','m_admin');
+    $this->load->model('M_konsumen','m_konsumen');
     $this->load->model('M_ichm');
-    $this->load->model('M_Home','m_home');
+    $this->load->model('M_home','m_home');
     $this->load->model(array('M_tender','M_produsen'));
     if ($this->session->userdata('is_login')!=TRUE) {
       redirect(base_url("home"));
@@ -213,14 +213,14 @@ class KonsumenMainPage extends MY_controller{
     $hasil = false;
     if($rekomendasi == 'rekomendasi'){
       $hasil = $this->M_ichm->getTenderRecommendation($id_tender);
-       
+      
         
     }
-      $this->parseData_kon['hasil'] = $hasil;
-      $this->parseData_kon['detail_tender'] = $this->m_admin->detail_tender($id_tender);
-      $this->parseData_kon['contents']   = 'Konsumen/content/v_detail_rekomendasi_tender';
-      $this->parseData_kon['tittle']   = 'Rekomendasi Tender';
-      $this->load->view('Konsumen/KonsumenMainView', $this->parseData_kon);
+    $this->parseData_kon['hasil'] = $hasil;
+    $this->parseData_kon['detail_tender'] = $this->m_admin->detail_tender($id_tender);
+    $this->parseData_kon['contents']   = 'Konsumen/content/v_detail_rekomendasi_tender';
+    $this->parseData_kon['tittle']   = 'Rekomendasi Tender';
+    $this->load->view('Konsumen/KonsumenMainView', $this->parseData_kon);
   }
   function detail_perusahaan($id_produsen){
     $id_produsen = $this->uri->segment(3);

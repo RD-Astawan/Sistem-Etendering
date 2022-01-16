@@ -7,8 +7,8 @@ class Home extends CI_Controller{
   {
     parent::__construct();
     $this->load->model(array('M_tender'));
-    $this->load->model('M_Admin','m_admin');
-    $this->load->model('M_Home','m_home');
+    $this->load->model('M_admin','m_admin');
+    $this->load->model('M_home','m_home');
     //Codeigniter : Write Less Do More
   }
 
