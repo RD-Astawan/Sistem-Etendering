@@ -351,71 +351,67 @@ label {
                 </div>
                 <div class="panel-body">
                   <div class="col-sm-6">
-                  <div class="input-group" id="form_1">
-                     <input class="form-control" name="id_konsumen" type="hidden" value="<?php echo $profile->id_produsen; ?>">
+                  <div class="input-group" id="form_0">
+                     <input class="form-control" name="id_produsen" type="hidden" value="<?php echo $profile->id_produsen; ?>">
                   </div>
                   <div class="input-group" id="form_1">
                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <input class="form-control textbox" name="nama_lengkap" id="nama_lengkap" placeholder="Nama Lengkap" type="text" value="<?php echo $profile->nama; ?>">
+                    <input class="form-control textbox" name="nama" id="nama" placeholder="Nama Lengkap" type="text" value="<?php echo $profile->nama; ?>">
                      
                   </div>
                   <span id="nama_lengkap_" class="text-warning"></span>
                   <br>
                    <div class="input-group" id="form_2">
+                    <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                    <input class="form-control textbox" name="nama_pt" id="nama_pt" placeholder="Nama Perusahaan" type="text" value="<?php echo $profile->nama_pt; ?>">
+                  </div>
+                  <span id="nama_pt_" class="text-warning"></span>
+                  <br>
+                   <div class="input-group" id="form_3">
                     <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
-                    <input class="form-control textbox" name="alamat" id="alamat" placeholder="Alamat" type="text" value="<?php echo $profile->nama_pt; ?>">
+                    <input class="form-control textbox" name="alamat" id="alamat" placeholder="Alamat" type="text" value="<?php echo $profile->alamat; ?>">
                   </div>
                   <span id="alamat_" class="text-warning"></span>
                   <br>
                    <div class="input-group" id="form_4">
-                    <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                    <input class="form-control textbox" name="kota" id="kota" placeholder="Kota" type="text" value="<?php echo $profile->alamat; ?>">
+                    <span class="input-group-addon"><i class="fa fa-home"></i></span>
+                    <input class="form-control textbox" name="kota" id="kota" placeholder="Kota" type="text" value="<?php echo $profile->kota; ?>">
                   </div>
                   <span id="kota_" class="text-warning"></span>
                   <br>
                    <div class="input-group" id="form_5">
-                    <span class="input-group-addon"><i class="fa fa-envelope-square"></i></span>
-                    <input class="form-control textbox" name="email" id="email" placeholder="Email" type="text" value="<?php echo $profile->kota; ?>">
+                    <span class="input-group-addon"><i class="fa fa-phone-square"></i></span>
+                    <input class="form-control textbox" name="no_tlp" id="no_tlp" placeholder="Nomer Telepon" type="text" value="<?php echo $profile->no_tlp; ?>">
                   </div>
-                  <span id="email_" class="text-warning"></span>
-                  <br>
-                   <div class="input-group" id="form_6">
-                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <input class="form-control textbox" name="username" id="username" placeholder="Username" type="text" value="<?php echo $profile->no_tlp; ?>">
-                  </div>
-                  <span id="username_" class="text-warning"></span>
+                  <span id="no_tlp_" class="text-warning"></span>
                   <!--file input example -->
                 </br>
-                <div class="input-group" id="form_7">
+                <div class="input-group" id="form_6">
                     <span class="input-group-addon"><i class="fa fa-envelope-square"></i></span>
                     <input class="form-control textbox" name="email" id="email" placeholder="Email" type="text" value="<?php echo $profile->email; ?>">
                   </div>
                   <span id="email_" class="text-warning"></span>
+                  <br>
+                  <div class="input-group" id="form_7">
+                    <span class="input-group-addon"><i class="fa fa-code"></i></span>
+                    <input class="form-control textbox" name="kode_npwp" id="kode_npwp" placeholder="Kode NPWP" type="text" value="<?php echo $profile->kode_npwp; ?>">
+                  </div>
+                  <span id="kode_npwp_" class="text-warning"></span>
                   <br>
                   <div class="input-group" id="form_8">
-                    <span class="input-group-addon"><i class="fa fa-envelope-square"></i></span>
-                    <input class="form-control textbox" name="email" id="email" placeholder="Email" type="text" value="<?php echo $profile->kode_npwp; ?>">
+                    <span class="input-group-addon"><i class="fa fa-user-secret"></i></span>
+                    <input class="form-control textbox" name="username" id="username" placeholder="Username" type="text" value="<?php echo $profile->username; ?>">
                   </div>
-                  <span id="email_" class="text-warning"></span>
-                  <br>
-                  <div class="input-group" id="form_9">
-                    <span class="input-group-addon"><i class="fa fa-envelope-square"></i></span>
-                    <input class="form-control textbox" name="email" id="email" placeholder="Email" type="text" value="<?php echo $profile->username; ?>">
-                  </div>
-                  <span id="email_" class="text-warning"></span>
-                  <br>
-                  <div class="input-group" id="form_10">
-                    <span class="input-group-addon"><i class="fa fa-envelope-square"></i></span>
-                    <input class="form-control textbox" name="email" id="email" placeholder="Email" type="text" value="<?php echo $profile->email; ?>">
-                  </div>
-                  <span id="email_" class="text-warning"></span>
+                  <span id="username_" class="text-warning"></span>
                   <br>
                 </div>
                 <div class="col-sm-6">
-                <div class="form-group">
+                <div class="form-group" id="form_9">
                   <label for="exampleFormControlTextarea1">Deskripsi PT / UD</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <textarea class="form-control textbox" id="deskripsi_pt" name="deskripsi_pt" rows="3"><?php echo $profile->deskripsi_pt; ?></textarea>
+                  <span id="deskripsi_pt_" class="text-warning"></span>
                 </div>
+                
         <!--image file upoad sample-->
         <div class="box">
           <!-- fileuploader view component -->
@@ -443,10 +439,6 @@ label {
         </div>
        
 
-
-
-
-
             </div>
             </div>
           </div>
@@ -461,11 +453,11 @@ label {
 <!-- END MAIN -->
 
 <script type="text/javascript">
-   var nama_lengkap_e   = $('#nama_lengkap').val();
-   var alamat_e         = $('#alamat').val();
-   var no_tlp_e         = $('#no_tlp').val();
-   var kota_e           = $('#kota').val();
-   var email_e          = $('#email').val();
+  //  var nama_lengkap_e   = $('#nama_lengkap').val();
+  //  var alamat_e         = $('#alamat').val();
+  //  var no_tlp_e         = $('#no_tlp').val();
+  //  var kota_e           = $('#kota').val();
+  //  var email_e          = $('#email').val();
    // $(document).ready(function() {
    //    $('#example').DataTable( {
    //       "paging":   true,
@@ -542,7 +534,7 @@ $(document).ready(function(){
       });
   });
 
-   $('#nama_lengkap').blur(function(){
+   $('#nama').blur(function(){
       var nama= $(this).val();
       var len= nama.length;
       if(len>0){ //jika ada isinya
@@ -553,9 +545,8 @@ $(document).ready(function(){
               $(this).parent().find('.form-control').addClass('is-invalid');
               return apply_feedback_error_nama(this);
           } else if(len>30){
-              
-                  $(this).parent().find('.text-warning').text("");
-                  $(this).parent().find('.text-warning').text("Maximal karakter 30");
+                  $(this).parent().find('.textbox').text("");
+                  $('#nama_lengkap_').text("Maximal karakter 30");
                   return apply_feedback_error_nama(this);
           }
           else{
@@ -569,12 +560,62 @@ $(document).ready(function(){
         $('#nama_lengkap_').show();
       }
   });
+
+  $('#nama_pt').blur(function(){
+      var nama_pt= $(this).val();
+      var len= nama_pt.length;
+      if(len>0){ //jika ada isinya
+          if(!valid_nama(nama_pt)){ //jika nama tidak valid
+              $(this).parent().find('.text-warning').text("");
+              $('#nama_pt_').text("Nama tidak valid! (Gunakan Hurup)");
+              $(this).parent().find('.form-control').removeClass('is-valid');
+              $(this).parent().find('.form-control').addClass('is-invalid');
+              return apply_feedback_error_nama(this);
+          } else if(len>30){
+                  $('#nama_pt_').text("Maximal karakter 30");
+                  return apply_feedback_error_nama(this);
+          }
+          else{
+            $('#nama_pt_').hide();
+          }
+      }else{
+        $('#nama_pt_').text("");
+        $('#nama_pt_').text("Text box ini tidak boleh kosong"); 
+        $('#form_2').removeClass('is-valid');
+        $('#form_2').addClass('has-warning');
+        $('#nama_pt_').show();
+      }
+  });
+
+  $('#deskripsi_pt').blur(function(){
+      var deskripsi_pt= $(this).val();
+      var len= deskripsi_pt.length;
+      if(len>0){ //jika ada isinya
+          if(len>300){
+            $('#deskripsi_pt_').show();
+            $('#deskripsi_pt_').text("Maximal karakter 300");
+            $('#form_9').removeClass('is-valid');
+            $('#form_9').addClass('has-warning');
+          }
+          else{
+            $('#deskripsi_pt_').hide();
+            $('#form_9').removeClass('has-warning');
+            $('#form_9').addClass('has-success');
+          }
+      }else{
+        $('#deskripsi_pt_').show();
+        $('#deskripsi_pt_').text("");
+        $('#deskripsi_pt_').text("Text box ini tidak boleh kosong"); 
+        $('#form_9').removeClass('is-valid');
+        $('#form_9').addClass('has-warning');
+      }
+  });
+
    $('#alamat').blur(function(){
       var alamat= $(this).val();
       var len= alamat.length;
       if(len>0){ //jika ada isinya
         if (len>30){ //jika karakter >30
-            $(this).parent().find('.text-warning').text("");
             $('#alamat_').text("Maximal karakter 30");
             $(this).parent().find('.form-control').removeClass('is-valid');
             $(this).parent().find('.form-control').addClass('is-invalid');
@@ -587,8 +628,8 @@ $(document).ready(function(){
       else{
          $('#alamat_').text("");
         $('#alamat_').text("Text box ini tidak boleh kosong"); 
-        $('#form_2').removeClass('is-valid');
-        $('#form_2').addClass('has-warning');
+        $('#form_3').removeClass('is-valid');
+        $('#form_3').addClass('has-warning');
         $('#alamat_').show();
       }
   });
@@ -597,10 +638,9 @@ $(document).ready(function(){
       var no_tlp=$(this).val();
       var len=no_tlp.length;
       if(len<=0){
-         $('#no_tlp_').text("");
         $('#no_tlp_').text("Text box ini tidak boleh kosong"); 
-        $('#form_3').removeClass('is-valid');
-        $('#form_3').addClass('has-warning');
+        $('#form_5').removeClass('is-valid');
+        $('#form_5').addClass('has-warning');
         $('#no_tlp_').show();
       }
       else if(len>0 && len<=10 && valid_no_tlp(no_tlp)){
@@ -637,7 +677,6 @@ $(document).ready(function(){
       var len= kota.length;
       if(len>0){ //jika ada isinya
           if(!valid_kota(kota)){ //jika nama tidak valid
-              $(this).parent().find('.text-warning').text("");
               $('#kota_').text("Nama kota tidak valid");
               $(this).parent().find('.form-control').removeClass('is-valid');
               $(this).parent().find('.form-control').addClass('is-invalid');
@@ -662,12 +701,12 @@ $(document).ready(function(){
             $('#kota_').show();
       }
   });
+
   $('#email').blur(function(){  
       var email=$(this).val();
       var len= email.length;
       if(len>0){ 
           if(!valid_email(email)){ 
-              $('#email_').text("");
               $('#email_').text("E-mail Tidak Valid (ex: aaaa@yahoo.co.id)");
               $(this).parent().find('.form-control').removeClass('is-valid');
               $(this).parent().find('.form-control').addClass('is-invalid');
@@ -675,13 +714,12 @@ $(document).ready(function(){
           } 
           else {
               if (len>30){ 
-                  $('#email_').text("");
                   $('#email_').text("Maximal Karakter 30");
                   return apply_feedback_error_email(this);
               } else {
                   var valid = false;
                   $.ajax({
-                   url: "<?php echo base_url('kon_page/checkemail_konsumen')?>",
+                   url: "<?php echo base_url('pro_page/checkemail_produsen')?>",
                    type: "POST",
                    data: "email="+email,
                    dataType: "text",
@@ -691,8 +729,8 @@ $(document).ready(function(){
                         $('#email_').text("Email sudah ada");
                         $('#email').removeClass('is-valid');
                         $('#email').addClass('is-invalid');
-                        $('#form_5').removeClass('has-success');
-                        $('#form_5').addClass('has-warning');
+                        $('#form_6').removeClass('has-success');
+                        $('#form_6').addClass('has-warning');
                         $('#email').addClass('no-valid');
                         return apply_feedback_error_email(this);
                      }
@@ -708,10 +746,47 @@ $(document).ready(function(){
          $('#email_').text("Text box ini tidak boleh kosong"); 
          $('#email').removeClass('is-valid');
          $('#email').addClass('is-invalid');
-         $('#form_5').addClass('has-warning');
+         $('#form_6').addClass('has-warning');
          $('#email_').show();
       }
   });
+
+  $('#kode_npwp').blur(function(){
+      var kode_npwp=$(this).val();
+      var len=kode_npwp.length;
+      if(len<=0){
+        $('#kode_npwp_').text("Text box ini tidak boleh kosong"); 
+        $('#form_7').removeClass('is-valid');
+        $('#form_7').addClass('has-warning');
+        $('#kode_npwp_').show();
+      }
+      else if(len>0 && len<15 && valid_kode_npwp(kode_npwp)){
+          $('#kode_npwp_').text("Kode NPWP terlalu pendek");
+          $(this).parent().find('.form-control').removeClass('is-valid');
+          $(this).parent().find('.form-control').addClass('is-invalid');
+          return apply_feedback_error_kode_npwp(this);
+      }
+      else if(len==15 && valid_kode_npwp(kode_npwp)){
+         $('#kode_npwp_').hide();
+      }
+       else {
+          if(len>0 && !valid_kode_npwp(kode_npwp)){
+              $('#kode_npwp_').text("Format Kode NPWP tidak sah.(ex: 285736262623345)");
+              $(this).parent().find('.form-control').removeClass('is-valid');
+              $(this).parent().find('.form-control').addClass('is-invalid');
+              return apply_feedback_error_kode_npwp(this);
+          } else {
+              if (len >15){
+                  $(this).parent().find('.form-control').removeClass('is-valid');
+                  $(this).parent().find('.form-control').addClass('is-invalid');
+                  $(this).parent().find('.text-warning').text("");
+                  $('#kode_npwp_').text("Kode NPWP terlalu Panjang");
+                  return apply_feedback_error_kode_npwp(this);
+              }
+          }
+      }
+  });
+
   $('#username').blur(function(){
       var username= $(this).val();
       var len= username.length;
@@ -732,23 +807,24 @@ $(document).ready(function(){
               } else {
                   var valid = false;
                   $.ajax({
-                  url: "<?php echo base_url('kon_page/checkusername_konsumen')?>",
+                  url: "<?php echo base_url('pro_page/checkusername_produsen')?>",
                   type: "POST",
                   data: "username="+username,
                   dataType: "text",
                   success: function(data){
                       if (data==0){
-                        $('#username_').text("");
+                        $('#username_').show();
                         $('#username_').text("Username sudah ada");
                         $('#username').removeClass('is-valid');
                         $('#username').addClass('is-invalid');
-                        $('#form_6').removeClass('has-success');
-                        $('#form_6').addClass('has-warning');
+                        $('#form_8').removeClass('has-success');
+                        $('#form_8').addClass('has-warning');
                         $('#username').addClass('no-valid');
-                          return apply_feedback_error_username(this);
                       }
                       if(data==1 && valid_username(username) && len<=30){
                         $('#username_').hide();
+                        $(this).parent().find('.form-control').removeClass('is-invalid');
+                        $(this).parent().find('.form-control').addClass('is-valid');
                       }
                   }       
                       });
@@ -759,10 +835,11 @@ $(document).ready(function(){
          $('#username_').text("Text box ini tidak boleh kosong"); 
          $('#username').removeClass('is-valid');
          $('#username').addClass('is-invalid');
-         $('#form_6').addClass('has-warning');
+         $('#form_8').addClass('has-warning');
          $('#username_').show();
       }
   });
+
   $('#form_edit_profile').submit(function(e){
          e.preventDefault();
          var valid=true;     
@@ -779,9 +856,10 @@ $(document).ready(function(){
          if(valid){             
              var url = '<?php echo base_url(); ?>';
              var formData = new FormData($(this)[0]);
+             var deskripsi_pt = $("textarea#deskripsi_pt").val();
               $.ajax({
                 type: 'POST',
-                url: url + 'kon_page/edit_profiles',
+                url: url + 'pro_page/edit_profiles',
                 data: formData,
                  processData:false,
                  contentType:false,
@@ -789,11 +867,11 @@ $(document).ready(function(){
                  async:false,
                 success: function(response){
                    if(response.warning){
-                     toastr.options.onHidden = function() { window.location.href = '<?php echo base_url('kon_page/profile');  ?>'; }
+                     toastr.options.onHidden = function() { window.location.href = '<?php echo base_url('pro_page/profile');  ?>'; }
                      toastr.warning('Data profile gagal diedit.', 'Gagal!');
                    }
                    else{
-                     toastr.options.onHidden = function() { window.location.href = '<?php echo base_url('kon_page/profile');  ?>'; }
+                     toastr.options.onHidden = function() { window.location.href = '<?php echo base_url('pro_page/profile');  ?>'; }
                      toastr.success('Data profile berhasil dirubah.', 'Sukses!');
                    }
                 }
@@ -811,6 +889,10 @@ function valid_nama(nama) {
 function valid_no_tlp(no_tlp){
      var pola = new RegExp(/^[0-9-+]+$/);
      return pola.test(no_tlp);
+ }
+ function valid_kode_npwp(kode_npwp){
+     var pola = new RegExp(/^[0-9-+]+$/);
+     return pola.test(kode_npwp);
  }
  function valid_kota(kota) {
   var pola= new RegExp(/^[a-z A-Z]+$/);
@@ -858,6 +940,14 @@ function apply_feedback_error_kota(textbox){
 }
 function apply_feedback_error_email(textbox){
    $('#email_').show();
+   $(textbox).addClass('no-valid'); //menambah class no valid
+   $(textbox).closest('div').removeClass('has-success');
+   $(textbox).closest('div').addClass('has-warning');
+   $(textbox).parent().find('.form-control').removeClass('is-valid');
+   $(textbox).parent().find('.form-control').addClass('is-invalid');
+}
+function apply_feedback_error_kode_npwp(textbox){
+   $('#kode_npwp_').show();
    $(textbox).addClass('no-valid'); //menambah class no valid
    $(textbox).closest('div').removeClass('has-success');
    $(textbox).closest('div').addClass('has-warning');

@@ -178,6 +178,154 @@ function edit_profile(){
   $this->load->view('Produsen/ProdusenMainView', $this->parseData_pro);  
 }
 
+function checkemail_produsen(){
+  $email = $_POST['email'];
+  $ses_email      = $this->session->userdata('ses_email');
+  $data = $this->M_produsen->checkemail_produsen($email);
+  
+  if($data>0){
+    if($data['email'] == $ses_email){
+      echo 1;
+    }
+    else{
+      echo 0;
+    }
+  }
+  else{
+    echo 1;
+  }
+}
+
+function checkusername_produsen(){
+  $username = $_POST['username'];
+  $ses_username      = $this->session->userdata('ses_username');
+  $data = $this->M_produsen->checkusername_produsen($username);
+
+  if($data>0){
+    if($data['username'] == $ses_username){
+      echo 1;
+    }
+    else{
+      echo 0;
+    }
+  }
+  else{
+    echo 1;
+  }
+}
+
+function edit_profiles(){
+  //$output = array('error' => false);
+  $id_produsen = $this->input->post('id_produsen');
+  $nama = $this->input->post('nama');
+  $nama_pt = $this->input->post('nama_pt');
+  $deskripsi_pt = $this->input->post('deskripsi_pt');
+  $alamat = $this->input->post('alamat');
+  $kota = $this->input->post('kota');
+  $no_tlp = $this->input->post('no_tlp');
+  $email  = $this->input->post('email');
+  $kode_npwp = $this->input->post('kode_npwp');
+  $username = $this->input->post('username');
+
+      $config['upload_path']    = './assets/Gambar/users/';
+      $config['allowed_types']  = 'gif|jpg|png|jpeg|bmp';
+      //$config['max_size']     = '2048';
+
+      $this->upload->initialize($config);
+    
+
+      if(!empty($_FILES['file_foto']['name'])){
+        if($this->upload->do_upload('file_foto')){
+          $new_image = $this->upload->data();
+
+          //Compress Image
+              $config['image_library']='gd2';
+              $config['source_image']='./assets/Gambar/users/'.$new_image['file_name'];
+              $config['create_thumb']= FALSE;
+              $config['maintain_ratio']= FALSE;
+              $config['quality']= '50%';
+              $config['width']= 950;
+              $config['height']= 886;
+              $config['new_image']= './assets/Gambar/users/'.$new_image['file_name'];
+              $this->load->library('image_lib', $config);
+              $this->image_lib->resize();
+
+              $gambar = $new_image['file_name'];
+
+
+            $this->M_produsen->update_data_profile_dengan_gambar($id_produsen, $nama, $nama_pt, $deskripsi_pt, $alamat, $kota, $no_tlp, $email, $kode_npwp, $username, $gambar);
+              $output['success'] = true;
+            
+        }
+        else{
+          $output['warning'] = true;
+        }
+      }
+      else{
+          $this->M_produsen->update_data_profile_tanpa_gambar($id_produsen, $nama, $nama_pt, $deskripsi_pt, $alamat, $kota, $no_tlp, $email, $kode_npwp, $username);
+         $output['success'] = true;
+         }
+
+        echo json_encode($output);
+}
+
+function edit_password(){
+	$id_produsen  = $this->session->userdata('ses_id');
+	$this->parseData_pro['password']   = $this->M_produsen->data_password($id_produsen);
+	$this->parseData_pro['content_pro']  = 'Produsen/content/v_edit_password';
+	$this->parseData_pro['tittle']    = 'Edit Password';
+	$this->load->view('Produsen/ProdusenMainView', $this->parseData_pro);
+}
+
+function save_new_pass(){
+  $output = array('warning' => false);
+  $output = array('error' => false);
+  $output = array('success' => false);
+  $database_password  = $this->input->post('password_database');
+  $old_password = $this->input->post('password_lama');
+  $current_password = $this->input->post('password_baru');
+  $confirm_password = $this->input->post('password_confirm');
+  $password_encrypt = md5($this->input->post('password_baru'));
+  $id_produsen      = $this->input->post('id_produsen');
+
+  if(md5($old_password) != $database_password){
+    $output['warning'] = true;
+  }
+  else{
+    if($old_password == $current_password){
+      $output['error'] = true;
+    }
+    else{
+      $this->M_produsen->change_passwrod($password_encrypt, $id_produsen);
+      $output['success'] = true;
+    }
+  }
+  echo json_encode($output);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -464,94 +612,11 @@ function edit_profile(){
 
   
 
-  function edit_profiles(){
-    $output = array('error' => false);
-    $id_konsumen = $this->input->post('id_konsumen');
-    $nama = $this->input->post('nama_lengkap');
-    $alamat = $this->input->post('alamat');
-    $no_tlp = $this->input->post('no_tlp');
-    $kota = $this->input->post('kota');
-    $email  = $this->input->post('email');
-    $username = $this->input->post('username');
+  
 
-        $config['upload_path']    = './assets/Gambar/users/';
-        $config['allowed_types']  = 'gif|jpg|png|jpeg|bmp';
-        //$config['max_size']     = '2048';
+  
 
-        $this->upload->initialize($config);
-      
-
-        if(!empty($_FILES['file_foto']['name'])){
-          if($this->upload->do_upload('file_foto')){
-            $new_image = $this->upload->data();
-
-            //Compress Image
-                $config['image_library']='gd2';
-                $config['source_image']='./assets/Gambar/users/'.$new_image['file_name'];
-                $config['create_thumb']= FALSE;
-                $config['maintain_ratio']= FALSE;
-                $config['quality']= '50%';
-                $config['width']= 950;
-                $config['height']= 886;
-                $config['new_image']= './assets/Gambar/users/'.$new_image['file_name'];
-                $this->load->library('image_lib', $config);
-                $this->image_lib->resize();
-
-                $gambar = $new_image['file_name'];
-
-
-              $this->m_konsumen->update_data_profile_dengan_gambar($id_konsumen, $nama, $alamat, $no_tlp, $kota, $email, $username, $gambar);
-                $output['success'] = true;
-              
-          }
-          else{
-            $output['warning'] = true;
-          }
-        }
-        else{
-            $this->m_konsumen->update_data_profile_tanpa_gambar($id_konsumen, $nama, $alamat, $no_tlp, $kota, $email, $username);
-           $output['success'] = true;
-          }
-
-          echo json_encode($output);
-  }
-
-  function checkemail_konsumen(){
-    $email = $_POST['email'];
-    $ses_email      = $this->session->userdata('ses_email');
-    $data = $this->m_konsumen->checkemail_konsumen($email);
-
-    
-    if($data>0){
-      if($data['email'] == $ses_email){
-        echo 1;
-      }
-      else{
-        echo 0;
-      }
-    }
-    else{
-      echo 1;
-    }
-  }
-
-  function checkusername_konsumen(){
-    $username = $_POST['username'];
-    $ses_username      = $this->session->userdata('ses_username');
-    $data = $this->m_konsumen->checkusername_konsumen($username);
-
-    if($data>0){
-      if($data['username'] == $ses_username){
-        echo 1;
-      }
-      else{
-        echo 0;
-      }
-    }
-    else{
-      echo 1;
-    }
-  }
+  
 
   function add_permintaan(){
     $id_konsumen          = $this->session->userdata('ses_id');
@@ -574,31 +639,7 @@ function edit_profile(){
     $this->load->view('Konsumen/KonsumenMainView', $this->parseData_kon);
   }
 
-  function save_new_pass(){
-    $output = array('warning' => false);
-    $output = array('error' => false);
-    $output = array('success' => false);
-    $database_password  = $this->input->post('password_database');
-    $old_password = $this->input->post('password_lama');
-    $current_password = $this->input->post('password_baru');
-    $confirm_password = $this->input->post('password_confirm');
-    $password_encrypt = md5($this->input->post('password_baru'));
-    $id_konsumen      = $this->input->post('id_konsumen');
-
-    if(md5($old_password) != $database_password){
-      $output['warning'] = true;
-    }
-    else{
-      if($old_password == $current_password){
-        $output['error'] = true;
-      }
-      else{
-        $this->m_konsumen->change_passwrod($password_encrypt, $id_konsumen);
-        $output['success'] = true;
-      }
-    }
-    echo json_encode($output);
-  }
+  
 
   
 

@@ -9,7 +9,7 @@
 					<h3 class="panel-title">Daftar Tender</h3>
 					<hr/>
 				</div>
-				<div class="panel-body">
+				<div class="panel-body" style="padding-left: 50;">
 					<div class="row">
 						<div class="col-md-12">
 							<table id="example" class="table table-striped table-bordered">
@@ -18,8 +18,8 @@
 					            	<th style="width: 5%;">No</th>
 					            	<th style="width: 40%;">Tender</th>
 					            	<th style="width: 15%;">Tanggal Tutup</th>
-					            	<th style="width: 15%;">Deadline Pengerjaan</th>
-					            	<th style="width: 10%;">Tawaran Harga</th>
+					            	<th style="width: 15%;">Deadline</th>
+					            	<th style="width: 10%;">Harga</th>
 					            	<th style="width: 15%;">Aksi</th>
 					          	</tr>
 					        	</thead>
@@ -42,7 +42,7 @@
 	                          	foreach ($lamaran->result() as $row) :
 	                        		?>
 	                        		<tr>
-			                          	<td style="text-align: center;"><?php echo $no ?></td>
+			                          	<td style="text-align: center;"><?php echo $no; ?></td>
 			                          	<td><?php echo $row->tittle;?></td>
 			                          	<td style="text-align: center;"><?php echo $row->tanggal_tutup;?></td>
 			                          	<td style="text-align: center;"><?php echo $row->deadline;?></td>
@@ -53,7 +53,7 @@
                                             $disabled = $tanggal_sekarang > $tanggal_tutup? 'disabled' : ''; //tanda tanya diartikan if dan setelahnya berupa jawaban ynag kiri benar dan setelah : salah
                                         ?> 
 			                          	<td><center>
-                                          <a href="<?php echo base_url() ?>Produsen/view_edit_lamaran/<?php echo $row->id_lamaran ?>"><button type="button" class="btn btn-sm btn-template-main" <?= $disabled ?>>PENAWARAN ULANG</button></a>
+                                          <a href="<?php echo base_url() ?>Produsen/view_edit_lamaran/<?php echo $row->id_lamaran ?>"><button type="button" class="btn btn-sm btn-info" <?= $disabled ?>><span class="lnr lnr-location"></span></button></a>
                                           <a href="javascript:void(0);"><button type="button" class="btn btn-sm btn-danger" data="<?php echo $row->id_tender; ?>" onclick="item_hapus(this);"><span class="lnr lnr-trash"></span></button></a>
 			                          	</center></td>
                                           

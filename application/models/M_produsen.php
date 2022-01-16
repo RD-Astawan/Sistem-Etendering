@@ -105,13 +105,13 @@ class M_produsen extends CI_Model{
     return $this->db->get('tb_produsen')->row_array();
   }
 
-  function update_data_profile_dengan_gambar($id_produsen, $nama, $alamat, $kota, $no_tlp, $email, $kode_npwp, $username, $gambar){
-      $hsl=$this->db->query("UPDATE tb_produsen SET nama='$nama', alamat='$alamat', kota='$kota', no_tlp='$no_tlp', email='$email', kode_npwp='$kode_npwp', username='$username', foto='$gambar' WHERE id_produsen='$id_produsen'");
+  function update_data_profile_dengan_gambar($id_produsen, $nama, $nama_pt, $deskripsi_pt, $alamat, $kota, $no_tlp, $email, $kode_npwp, $username, $gambar){
+      $hsl=$this->db->query("UPDATE tb_produsen SET nama='$nama', nama_pt = '$nama_pt', deskripsi_pt = '$deskripsi_pt', alamat='$alamat', kota='$kota', no_tlp='$no_tlp', email='$email', kode_npwp='$kode_npwp', username='$username', foto='$gambar' WHERE id_produsen='$id_produsen'");
       return $hsl;
   }
 
-  function update_data_profile_tanpa_gambar($id_produsen, $nama, $alamat, $no_tlp, $kota, $email, $kode_npwp, $username){
-      $hsl=$this->db->query("UPDATE tb_produsen SET nama='$nama', alamat='$alamat', no_tlp='$no_tlp', kota='$kota', email='$email', kode_npwp='$kode_npwp', username='$username' WHERE id_produsen='$id_produsen'");
+  function update_data_profile_tanpa_gambar($id_produsen, $nama, $nama_pt, $deskripsi_pt, $alamat, $kota, $no_tlp, $email, $kode_npwp, $username){
+      $hsl=$this->db->query("UPDATE tb_produsen SET nama = '$nama', nama_pt = '$nama_pt', deskripsi_pt = '$deskripsi_pt', alamat = '$alamat', kota = '$kota', no_tlp = '$no_tlp', email = '$email', kode_npwp = '$kode_npwp', username = '$username'  WHERE id_produsen='$id_produsen'");
       return $hsl;
   }
 

@@ -14,7 +14,7 @@
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
 									<li><a href="<?php echo base_url('pro_page/profile') ?>" class="">Profile Saya</a></li>
-									<li><a href="<?php echo base_url('kon_page/change_password') ?>" class="">Edit Password</a></li>
+									<li><a href="<?php echo base_url('pro_page/edit_password') ?>" class="">Edit Password</a></li>
 								</ul>
 							</div>
 						</li>
